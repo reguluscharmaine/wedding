@@ -1,0 +1,310 @@
+/* Animation */
+
+  /* fade-in */
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animation-fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  /* slide in */
+
+  .slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* General */
+
+h1{
+  font-family: 'Alice', serif;
+
+  color: white;
+}
+
+h4{
+  color:white;
+}
+
+/* Index Page */
+
+  /* Index - Nav Bar and Cover */
+  .nav-background-index{
+    background-image: url("./Images/20230501_183351\ \(6\).jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+  }
+
+  .title-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Index - Countdown */
+
+  .countdown-background{
+    background-image: url("./Images/frame1.png");
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 576px) {
+    .responsive-image {
+      height: 50%;
+    }
+  }
+
+
+
+  /* Index - Love Story */
+
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin-bottom: 10px;
+    
+  }
+
+  @media (max-width: 576px) {
+    .responsive-image {
+      max-width: 50%;
+    }
+  }
+
+  /* Index - Carousell */
+  .carousel-item {
+      position: relative;
+    }
+    
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the alpha value (0.5) to your desired transparency */
+  }
+
+  @media (max-width: 576px) {
+    .caption-title {
+      font-size: 1rem;
+    }
+  
+    .caption-text {
+      font-size: 0.5rem;
+    }
+    .btn-sm-sm {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+
+
+
+    
+/* Ceremonoy */
+
+/* Cermeony - navbar */
+
+.nav-background-ceremony{
+  background-image: url("./Images/\(P\)20221218_114627\ copy.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+  /* Ceremony - Google map */
+
+
+  .map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Ceremonoy - Q&A */
+
+  
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+}
+
+
+
+
+
+/* Our Story */
+  /* Our Story - Timeline */
+
+
+
+
+    /* The actual timeline (the vertical ruler) */
+    .main-timeline-2 {
+    position: relative;
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .main-timeline-2::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: lightpink;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    }
+
+    /* Container around content */
+    .timeline-2 {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    }
+
+    /* The circles on the timeline */
+    .timeline-2::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -11px;
+    background-color: #F8C8DC;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    }
+
+    /* Place the container to the left */
+    .left-2 {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+    }
+
+    /* Place the container to the right */
+    .right-2 {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+    }
+
+    /* Add arrows to the left container (pointing right) */
+    .left-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+    }
+
+    /* Add arrows to the right container (pointing left) */
+    .right-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for containers on the right side */
+    .right-2::after {
+    left: -14px;
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+
+    /* Place the timelime to the left */
+    .main-timeline-2::after {
+      left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline-2 {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline-2::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left-2::after,
+    .right-2::after {
+      left: 18px;
+    }
+
+    .left-2::before {
+      right: auto;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right-2 {
+      left: 0%;
+    }
+    }
+
+
+    /* Gallary */
+
+    .nav-background-gallary{
+      background-image: url("./Images/O.W.-147A.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.9;
+    }
+
+
+    /* Story */
+
+    .nav-background-story{
+      background-image: url("./Images/pink-bg.png");
+      background-size: cover;
+      background-position: center;
+      width:100%;
+    }
